@@ -5,6 +5,7 @@ flask_app is a example using  blueprint of flask.
 
 > [English](http://exploreflask.com/en/latest/), [中文](https://spacewander.github.io/explore-flask-zh/index.html)
 
+```
 flask_app/
     __init__.py
     manage.py
@@ -32,7 +33,7 @@ flask_app/
             hello.js
         templates/          # templates of demo
             index.html
-
+```
 
 
 
