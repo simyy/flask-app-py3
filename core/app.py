@@ -10,16 +10,16 @@ db = SQLAlchemy()
 
 
 def create_app(app_name, config_name):
-    #app = Flask(app_name, template_folder="app/templates")
+    app = Flask(app_name, template_folder="app/templates")
     app = Flask(app_name)
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     if config_name == 'production':
         app.config['DEBUG'] = False
 
-    # @app.route('/static/<path:path>')
-    # def static_files():
-    #     return app.send_static_file(path)
+    @app.route('/static/<path:path>')
+    def static_files():
+        return app.send_static_file(path)
 
     # init environment
     app.config.from_object(configs[config_name])

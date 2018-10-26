@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+    #waitingflag {
+        color: #777;    
+        font-size: 5em;
+    }
+    #waiting img {
+        width: 55em;
+    }
+    {% from 'welcome.html' import wlcss %}
+    </style>
+{% endblock %}
+{% block content %}
+    {% from 'welcome.html' import wlhtml %}
+<div id="waiting" class="displaycenter">
+    <div class="row">
+        <div>
+            <img src="static/img/waiting.jpeg" />
+        </div>
+        <div>
+            <p id="waitingflag" class="displaycenter">敬请期待</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+<!-- script -->
+{% block css %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}

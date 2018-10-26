@@ -1,0 +1,40 @@
+
+#header {
+    height: 3em;
+    margin-bottom: 0em;
+    background-color: rgba(0,0,0,.0001);
+    border-color: rgba(0,0,0,.0001);
+
+}
+
+#header .navbar-brand {
+    color: #ffffff;
+    padding-top: 7px;
+}
+
+#logo-img {
+    width: 40em;
+}
+
+#login-img {
+    width: 5em;
+}
+
+
+#content {
+    padding-top: 3em;
+    margin-top: 1em;
+}
+
+/*启动flex && 水平居中*/
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}	
+
+.displaycenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

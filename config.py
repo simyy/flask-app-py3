@@ -16,7 +16,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root@localhost/test?charset=utf8"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root@localhost/zoro?charset=utf8"
 
 
 class TestingConfig(Config):
@@ -25,7 +25,7 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root@localhost/test?charset=utf8"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root@localhost/zoro?charset=utf8"
 
 
 configs = {
