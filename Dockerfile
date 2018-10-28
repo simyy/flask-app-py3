@@ -1,12 +1,20 @@
-FROM python:apline
+FROM python:alpine
 
-COPY /root/python/flask_app/src /home/
+COPY app /home/
 
-RUN echo "http://mirrors.aliyun.com/alpine/v3.8/main/" >> /etc/apk/repositories
-RUN echo "http://mirrors.aliyun.com/alpine/v3.8/community/" >> /etc/apk/repositories
+RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" >> /etc/apk/repositories
+RUN echo "http://mirrors.aliyun.com/alpine/v3.4/community/" >> /etc/apk/repositories
 
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cython
-RUN pip installpip install -U setuptool
+RUN apk --update upgrade
+#RUN apk add --no-cache --virtual .build-deps gcc musl-dev
+RUN apk add gcc musl-dev
+RUN apk add libevent
 
-RUN sh /home/pip_install.sh
+RUN pip install -U setuptools
+#RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cython
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cython werkzeug flask flask_script flask_migrate gevent 
+
+EXPOSE 4000
+
+WORKDIR /home/
+CMD python /home/manage.py runserver
