@@ -9,10 +9,12 @@ RUN apk --update upgrade
 #RUN apk add --no-cache --virtual .build-deps gcc musl-dev
 RUN apk add gcc musl-dev
 RUN apk add libevent
+RUN apk add libffi-dev
+RUN apk add openssl-dev
 
 RUN pip install -U setuptools
 #RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cython
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cython werkzeug flask flask_script flask_migrate gevent 
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cython werkzeug flask flask_script flask_migrate gevent pymysql
 
 EXPOSE 4000
 
