@@ -36,7 +36,7 @@ manager.add_command("db", MigrateCommand)
 
 
 @manager.command
-def runserver(host="127.0.0.1", port=5000, env='product'):
+def runserver(host="127.0.0.1", port=4000, env='product'):
     """
     run a gevent-based WSGI server
     """
